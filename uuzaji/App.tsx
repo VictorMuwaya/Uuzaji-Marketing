@@ -8,7 +8,7 @@ import Services from './pages/Services';
 import AiStrategy from './pages/AiStrategy';
 import Contact from './pages/Contact';
 import BusinessCard from './pages/BusinessCard';
-
+import Legal from './pages/Legal';
 import { PageRoute } from './types';
 
 const App: React.FC = () => {
