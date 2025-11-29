@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Shield, FileText, ArrowLeft } from 'lucide-react';
 import { PageRoute } from '../types';
