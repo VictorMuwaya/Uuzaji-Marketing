@@ -15,10 +15,10 @@ export const generateMarketingStrategy = async (
   }
 
   // Initialize the client with the key
-  const ai = new GoogleGenAI({ apiKey });
+  const ai = new GoogleGenAI({ apiKey }); 
 
   const prompt = `
-    You are a senior marketing strategist for Uuzaji, a premier East African marketing firm.
+    You are a senior marketing strategist for Uuzaji, a premier East African marketing agency.
     
     Client Details:
     - Business Name: ${businessName}
@@ -26,7 +26,7 @@ export const generateMarketingStrategy = async (
     - Target Audience: ${targetAudience} (Focus context: Uganda, Kenya, Tanzania, Rwanda)
 
     Task:
-    Generate a high-impact, culturally resonant marketing strategy.
+    Generate a high-impact, culturally resonant marketing strategy, tailor the strategy to the Client Details.
     
     Output Format:
     Use strictly formatted Markdown. Do not use JSON.
