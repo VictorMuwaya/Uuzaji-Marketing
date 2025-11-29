@@ -36,7 +36,7 @@ const Logo: React.FC<LogoProps> = ({ className = "h-10", showText = true, varian
             Uuzaji
           </span>
           <span className="text-[0.6rem] font-bold tracking-[0.2em] text-gray-400 uppercase leading-none mt-1">
-            Marketing Firm
+            Marketing Agency
           </span>
         </div>
       )}
