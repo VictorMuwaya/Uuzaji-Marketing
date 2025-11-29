@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Smartphone, Mail, MapPin, Globe, Share2, Printer, ArrowLeft, Check, Copy } from 'lucide-react';
+import { Mail, MapPin, Globe, Share2, Printer, ArrowLeft, Check } from 'lucide-react';
 import Logo from '../components/Logo';
 import { Images } from '../assets/images';
 import { PageRoute } from '../types';
