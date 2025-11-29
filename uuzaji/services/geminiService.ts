@@ -1,30 +1,50 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const generateMarketingStrategy = async (
   businessName: string,
   industry: string,
   targetAudience: string
 ): Promise<string> => {
 
+  // Access the key via the modern Vite standard
+  const apiKey = import.meta.env.VITE_API_KEY;
+
+  if (!apiKey) {
+    console.error("API Key is missing. If you are on Cloudflare, ensure 'API_KEY' is set in Settings > Environment Variables and you have REDEPLOYED.");
+    throw new Error("Configuration Error: API Key not found. Please contact support.");
+  }
+
+  // Initialize the client with the key
+  const ai = new GoogleGenAI({ apiKey });
+
   const prompt = `
-    Act as a senior marketing strategist for Uuzaji, a top East African marketing firm.
+    You are a senior marketing strategist for Uuzaji, a premier East African marketing firm.
     
-    A client has approached us with the following details:
+    Client Details:
     - Business Name: ${businessName}
     - Industry: ${industry}
-    - Target Audience: ${targetAudience} (focus on East African context: Uganda, Kenya, Tanzania, Rwanda)
+    - Target Audience: ${targetAudience} (Focus context: Uganda, Kenya, Tanzania, Rwanda)
 
-    Please provide a concise but high-impact marketing strategy response in JSON format (but return it as plain text for me to parse or just formatted markdown text). 
+    Task:
+    Generate a high-impact, culturally resonant marketing strategy.
     
-    The response should include:
-    1. A catchy Slogan (English & Swahili option).
-    2. A 3-point strategy focusing on digital and local activation.
-    3. A specific "Pan-African Twist" idea to make the brand stand out culturally.
+    Output Format:
+    Use strictly formatted Markdown. Do not use JSON.
+    
+    Structure:
+    ### 1. Brand Essence & Slogan
+    - **English Slogan:** [Catchy & Professional]
+    - **Swahili/Local Slang Twist:** [Culturally relevant & fun]
+    
+    ### 2. The Game Plan (3-Point Strategy)
+    - **Digital Angle:** Specific platforms (e.g., WhatsApp, TikTok, Twitter) and content types suitable for East Africa.
+    - **Ground Game:** A physical activation idea (e.g., Market storms, Pop-ups, Boda-boda branding).
+    - **Loyalty Hook:** How to keep them coming back.
 
-    Keep the tone professional, energetic, and culturally relevant to East Africa.
-    Format the output using Markdown.
+    ### 3. The Pan-African Twist
+    - One unique idea that specifically leverages East African culture (music, food, habits, or holidays) to make this brand go viral.
+
+    Tone: Professional, energetic, and knowledgeable about the region. Keep it concise.
   `;
 
   try {
@@ -32,7 +52,7 @@ export const generateMarketingStrategy = async (
       model: 'gemini-2.5-flash',
       contents: prompt,
       config: {
-        thinkingConfig: { thinkingBudget: 0 } // Disable thinking for faster response on simple tasks
+        thinkingConfig: { thinkingBudget: 0 } // Disable thinking for faster response
       }
     });
 
