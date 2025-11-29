@@ -1,0 +1,11 @@
+<svg width="250" height="80" viewBox="0 0 250 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(10, 10) scale(0.6)">
+    <path d="M30 20 L30 65 C30 85 45 85 50 85 C45 85 30 85 30 65 L30 20" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round"/>
+    <path d="M15 35 L30 15 L45 35" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M70 20 L70 65 C70 85 55 85 50 85 C55 85 70 85 70 65 L70 20" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
+    <path d="M55 35 L70 15 L85 35" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M30 65 C30 90 70 90 70 65" stroke="#aaaaaa" stroke-width="12" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <text x="80" y="45" font-family="sans-serif" font-weight="bold" font-size="36" fill="#1c1917">Uuzaji</text>
+  <text x="82" y="62" font-family="sans-serif" font-weight="bold" font-size="10" fill="#4b5563" letter-spacing="0.2em">MARKETING FIRM</text>
+</svg>
