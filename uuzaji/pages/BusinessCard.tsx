@@ -103,7 +103,7 @@ const BusinessCard: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Mail className="w-5 h-5 text-brand-primary" />
-                      <span className="font-medium">hello@uuzaji.co.ug</span>
+                      <span className="font-medium">uuzaji.ug@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-brand-primary" />
