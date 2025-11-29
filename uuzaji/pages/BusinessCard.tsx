@@ -43,7 +43,7 @@ const BusinessCard: React.FC = () => {
   const handleShare = async () => {
     const shareData = {
       title: 'Uuzaji Marketing',
-      text: 'Check out Uuzaji, the premier East African marketing firm.',
+      text: 'Check out Uuzaji, the premier East African marketing agency.',
       url: window.location.href
     };
 
@@ -116,7 +116,7 @@ const BusinessCard: React.FC = () => {
                 <div className="w-[120px] flex flex-col items-center justify-center border-l-2 border-gray-100 pl-4">
                   <div className="bg-white p-2 rounded-lg shadow-inner border border-gray-200">
                     <img 
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent('https://uuzaji.co.ug')}&bgcolor=ffffff&color=1c1917`}
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent('https://uuzaji.mypages.workers.dev')}&bgcolor=ffffff&color=1c1917`}
                       alt="Website QR Code"
                       className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
                     />
