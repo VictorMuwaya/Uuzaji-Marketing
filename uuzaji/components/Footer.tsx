@@ -65,7 +65,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-brand-primary flex-shrink-0" />
-                <span>hello@uuzaji.co.ug</span>
+                <span>uuzaji.ug@gmail</span>
               </li>
             </ul>
           </div>
