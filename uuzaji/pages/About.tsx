@@ -57,15 +57,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl font-display font-bold text-white mb-4">Leadership Team</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TeamCard 
-              name="Victor Muwaya" 
-              role="Head of IT" 
-              image={Images.team.victor}
-              socials={{
-                linkedin: "linkedin.com/in/victor-muwaya-4a204a387",
-                twitter: "https://twitter.com"
-              }}
-            />
+          
             <TeamCard 
               name="Matthew Amanya" 
               role="Managing Director" 
