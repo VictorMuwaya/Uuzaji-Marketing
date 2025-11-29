@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Images } from '../assets/images';
+import { Linkedin, Twitter } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -56,24 +58,49 @@ const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TeamCard 
+              name="Victor Muwaya" 
+              role="Head of IT" 
+              image={Images.team.victor}
+              socials={{
+                linkedin: "linkedin.com/in/victor-muwaya-4a204a387",
+                twitter: "https://twitter.com"
+              }}
+            />
+            <TeamCard 
               name="Matthew Amanya" 
               role="Managing Director" 
               image={Images.team.matthew}
+              socials={{
+                linkedin: "linkedin.com/in/amanya-mathew-123245236",
+                twitter: "https://twitter.com"
+              }}
             />
             <TeamCard 
               name="Matridah Ntongo" 
-              role="Head of Corporate Sales" 
+              role="Head of Corporate" 
               image={Images.team.matridah}
+              socials={{
+                linkedin: "https://linkedin.com",
+                twitter: "https://twitter.com"
+              }}
+            />
+            <TeamCard 
+              name="Victor Muwaya" 
+              role="Head of IT" 
+              image={Images.team.victor}
+              socials={{
+                linkedin: "linkedin.com/in/victor-muwaya-4a204a387",
+                twitter: "https://twitter.com"
+              }}
             />
             <TeamCard 
               name="Joel Muhumuza" 
               role="Creative Director" 
               image={Images.team.joel}
-            />
-              <TeamCard 
-              name="Victor Muwaya" 
-              role="Head of IT" 
-              image={Images.team.victor}
+              socials={{
+                linkedin: "https://linkedin.com",
+                twitter: "https://twitter.com"
+              }}
             />
           </div>
         </div>
@@ -82,15 +109,44 @@ const About: React.FC = () => {
   );
 };
 
-const TeamCard: React.FC<{ name: string, role: string, image: string }> = ({ name, role, image }) => (
+interface TeamCardProps {
+    name: string;
+    role: string;
+    image: string;
+    socials?: {
+        linkedin?: string;
+        twitter?: string;
+    };
+}
+
+const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, socials }) => (
   <div className="group text-center">
     <div className="relative overflow-hidden rounded-xl mb-6 aspect-[3/4] mx-auto max-w-sm">
       <img src={image} alt={name} className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-        <div className="flex gap-4">
-            {/* Social icons placeholder */}
-            <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs cursor-pointer">in</div>
-            <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs cursor-pointer">tw</div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+        <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            {socials?.linkedin && (
+                <a 
+                    href={socials.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-brand-primary hover:bg-white hover:text-brand-primary text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg"
+                    aria-label={`${name}'s LinkedIn`}
+                >
+                    <Linkedin size={18} />
+                </a>
+            )}
+            {socials?.twitter && (
+                <a 
+                    href={socials.twitter} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-brand-primary hover:bg-white hover:text-brand-primary text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg"
+                    aria-label={`${name}'s Twitter`}
+                >
+                    <Twitter size={18} />
+                </a>
+            )}
         </div>
       </div>
     </div>
