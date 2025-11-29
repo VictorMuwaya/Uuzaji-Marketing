@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import AiStrategy from './pages/AiStrategy';
 import Contact from './pages/Contact';
 import BusinessCard from './pages/BusinessCard';
+import Legal from './pages/Legal';
 import { PageRoute } from './types';
 
 const App: React.FC = () => {
@@ -54,6 +55,10 @@ const App: React.FC = () => {
         return <Contact />;
       case PageRoute.BUSINESS_CARD:
         return <BusinessCard />;
+      case PageRoute.PRIVACY_POLICY:
+        return <Legal type="privacy" onNavigate={navigateTo} />;
+      case PageRoute.TERMS_OF_SERVICE:
+        return <Legal type="terms" onNavigate={navigateTo} />;
       default:
         return <Home onNavigate={navigateTo} />;
     }
