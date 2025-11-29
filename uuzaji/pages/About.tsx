@@ -56,24 +56,24 @@ const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TeamCard 
-              name="Victor Muwaya" 
-              role="Head of IT" 
-              image={Images.team.victor}
-            />
-            <TeamCard 
               name="Matthew Amanya" 
-              role="Head of digtal marketing" 
+              role="Managing Director" 
               image={Images.team.matthew}
             />
             <TeamCard 
               name="Matridah Ntongo" 
-              role="Head of Strategy" 
+              role="Head of Corporate Sales" 
               image={Images.team.matridah}
             />
             <TeamCard 
               name="Joel Muhumuza" 
               role="Creative Director" 
               image={Images.team.joel}
+            />
+              <TeamCard 
+              name="Victor Muwaya" 
+              role="Head of IT" 
+              image={Images.team.victor}
             />
           </div>
         </div>
