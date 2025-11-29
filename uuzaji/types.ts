@@ -5,7 +5,9 @@ export enum PageRoute {
   SERVICES = 'services',
   AI_STRATEGY = 'ai-strategy',
   CONTACT = 'contact',
-  BUSINESS_CARD = 'business-card'
+  BUSINESS_CARD = 'business-card',
+  PRIVACY_POLICY = 'privacy-policy',
+  TERMS_OF_SERVICE = 'terms-of-service'
 }
 
 export interface Testimonial {
