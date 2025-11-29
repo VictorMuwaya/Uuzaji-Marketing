@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Load env file based on `mode` in the current working directory.
-  const env = loadEnv(mode, process.cwd(), '');
+  // Fix: Cast process to any to resolve TS error about missing cwd() in Process type
+  const env = loadEnv(mode, (process as any).cwd(), '');
 
   // Check all common naming patterns for the key
   // Priority: Cloudflare/System (process.env) -> Local .env (env)
