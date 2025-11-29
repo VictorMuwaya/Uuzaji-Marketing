@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Send, Loader2, Copy, CheckCircle } from 'lucide-react';
+import { Sparkles, Loader2, Copy, CheckCircle } from 'lucide-react';
 import { generateMarketingStrategy } from '../services/geminiService';
 import ReactMarkdown from 'react-markdown';
 
