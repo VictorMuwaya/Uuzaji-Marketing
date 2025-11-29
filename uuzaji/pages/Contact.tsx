@@ -28,18 +28,18 @@ const Contact: React.FC = () => {
     setLoading(true);
     setStatus('idle');
 
-    // CONFIGURATION: REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
-    // Sign up at https://www.emailjs.com/ to get these
-    const SERVICE_ID = 'YOUR_SERVICE_ID'; 
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; 
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; 
+    // CONFIGURATION: Access keys securely via environment variables
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     try {
         if (!formRef.current) return;
 
-        // Verify keys are present (Simple check to help user debug)
-        if (SERVICE_ID === 'YOUR_SERVICE_ID') {
-            throw new Error("Please configure your EmailJS keys in pages/Contact.tsx");
+        // Verify keys are present
+        if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+            console.error('Missing EmailJS environment variables.');
+            throw new Error("Configuration Error: EmailJS keys are missing. Please check Cloudflare settings.");
         }
 
         await emailjs.sendForm(
